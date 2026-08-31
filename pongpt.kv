@@ -1,0 +1,150 @@
+# Импорт сторонних виджетов и зависимостей
+#:import MDScrollView kivymd.uix.scrollview.MDScrollView
+#:import MDBoxLayout kivymd.uix.boxlayout.MDBoxLayout
+#:import MDIconButton kivymd.uix.button.MDIconButton
+#:import MDTextField kivymd.uix.textfield.MDTextField
+#:import MDRelativeLayout kivymd.uix.relativelayout.MDRelativeLayout
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import platform kivy.utils.platform
+#:import Window kivy.core.window.Window
+
+# Заполнение класса GUI
+<GUI>:
+    orientation: 'vertical'
+
+    # Верхняя панель с UI элементами
+    MDBoxLayout:
+        size_hint_y: None
+        height: dp(70)
+        md_bg_color: .15, .15, .15, 1
+
+        # Кнопка списка чатов
+        MDIconButton:
+            id: chats_button
+            icon: 'chat'
+            md_bg_color: 0, .2, 1, .5
+            theme_icon_color: 'Custom'
+            icon_color: 1, 1, 1, 1
+
+        # Кнопка переключения языков
+        MDIconButton:
+            id: language_changer
+            icon: 'translate'
+
+        # Название чата
+        MDLabel:
+            id: chat_name_label
+            halign: 'center'
+            markup: True
+
+        # Кнопка перехода в репозиторий на GitHub
+        MDIconButton:
+            icon: 'github'
+            theme_icon_color: 'Custom'
+            icon_color: 0, .2, 1, 1
+            md_bg_color: 0, 1, 1, 1
+            on_release: root.open_link()
+
+        # Кнопка очистки чата
+        MDIconButton:
+            id: clear_history_button
+            icon: 'trash-can'
+            md_bg_color: 1, 0, 0, .5
+            theme_icon_color: 'Custom'
+            icon_color: 1, 0, 0, 1
+
+    # Layout, для хранения содержимого чата
+    RelativeLayout:
+        MDScrollView:
+            id: messages_scroll
+            do_scroll_x: False
+            scroll_y: 1
+            on_scroll_y: root.on_scroll_change(self.scroll_y)
+
+            # Контейнер, содержащий в себе сообщения
+            MDBoxLayout:
+                id: messages_container
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 30
+
+        # Кнопка прокрутки чата вниз
+        MDIconButton:
+            id: scroll_down_button
+            icon: 'arrow-down'
+            md_bg_color: .2, .2, .2, 1
+            size_hint: None, None
+            size: dp(48), dp(48)
+            opacity: 0
+            disabled: True
+            pos_hint: {'right': .95, 'bottom': .95}
+
+    # Layout отправки сообщений
+    MDBoxLayout:
+        size_hint_y: None
+        height: dp(70)
+        md_bg_color: 0, 0, 0, 0
+        spacing: dp(5)
+        padding: dp(5), 0, dp(5), 0
+
+        # Кнопка голосового ввода
+        MDIconButton:
+            id: voice_button
+            icon: 'microphone'
+            size: dp(48), dp(48)
+            md_bg_color: 0, .2, 1, .5
+            theme_icon_color: 'Custom'
+            icon_color: 0, .2, 1, 1
+            pos_hint: {'center_y': 0.4}
+
+        # Контейнер для поля ввода
+        MDBoxLayout:
+            size_hint_x: .8
+            size_hint_y: .75
+            padding: dp(2), dp(2), dp(2), dp(2)
+            radius: dp(5), dp(5), dp(5), dp(5)
+
+            # Поле ввода текста сообщения
+            MDTextField:
+                id: prompt_input
+                mode: 'round'
+                padding: 0, dp(5), 0, dp(5)
+                multiline: True
+                text_color_normal: 1, 1, 1, 1
+                text_color_focus: 1, 1, 1, 1
+                height: dp(70)
+                max_height: dp(70)
+                size_hint_x: .8
+                on_text: root.on_prompt_text_change(self.text)
+
+        # Кнопка отправки сообщения
+        MDIconButton:
+            id: send_button
+            icon: 'send'
+            size: dp(48), dp(48)
+            md_bg_color: 0, .2, 1, .5
+            theme_icon_color: 'Custom'
+            icon_color: 0, .2, 1, 1
+            pos_hint: {'center_y': .4}
+    MDBoxLayout:
+        size_hint_y: .08
+        spacing: dp(10)
+        padding: dp(5), 0, dp(5), 0
+
+        MDIconButton:
+            id: send_image_button
+            icon: 'plus'
+            size: dp(20), dp(20)
+            md_bg_color: 0, .2, 1, .5
+            theme_icon_color: 'Custom'
+            icon_color: 1, 1, 1, 1
+            size_hint_y: .9
+
+        MDRoundFlatButton:
+            id: prompt_setter_button
+            text: 'Prompt setter'
+            md_bg_color: 0, 0, 0, 1
+            size_hint_y: .9
+            width: Window.width * .3
+            
