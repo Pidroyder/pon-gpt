@@ -1,6 +1,6 @@
 # 🤖 PonGPT — твой личный ИИ-помощник
 
-[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Pidroyder/PonGPT/releases)
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/Pidroyder/pon-gpt/releases)
 ![Platform](https://img.shields.io/badge/platform-Android-brightgreen.svg)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
@@ -39,7 +39,7 @@
 
 | Платформа | Ссылка |
 |-----------|--------|
-| **Android APK** | [Скачать последнюю версию](https://github.com/Pidroyder/PonGPT/releases/latest) |
+| **Android APK** | [Скачать последнюю версию](https://github.com/Pidroyder/pon-gpt/releases/latest) |
 
 > ⚠️ **Требования:** Android 7.0 (API 24) и выше.
 
@@ -47,7 +47,7 @@
 
 ## 🚀 Установка
 
-1. Скачай APK-файл из [Releases](https://github.com/Pidroyder/PonGPT/releases)
+1. Скачай APK-файл из [Releases](https://github.com/Pidroyder/pon-gpt/releases)
 2. Разреши установку из неизвестных источников (Настройки → Безопасность)
 3. Открой файл и нажми «Установить»
 4. Готово! Наслаждайся общением с ИИ 🤖
