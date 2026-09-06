@@ -53,4 +53,4 @@
 4. Готово! Наслаждайся общением с ИИ 🤖
 
 По вопросам рекламы: `[pongptofficial@gmail.com]`
-[Для рекламодателей](https://github.com/Pidroyder/pon-gpt/blob/main/Для%20Рекламодателей.md)
+[Для рекламодателей](https://github.com/Pidroyder/pon-gpt/blob/main/%D0%94%D0%BB%D1%8F%20%D1%80%D0%B5%D0%BA%D0%BB%D0%B0%D0%BC%D0%BE%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9.md)
